@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拍照识物</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35',
+                        secondary: '#F5F5F5',
+                        textMain: '#333333',
+                        textSub: '#666666',
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .card-shadow {
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            }
+            .btn-gradient {
+                background: linear-gradient(90deg, #FF6B35 0%, #FF8C60 100%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#FAFAFA] font-sans text-textMain">
+    <div class="max-w-md mx-auto min-h-screen bg-white p-4">
+        <div class="flex items-center justify-between mb-5">
+            <h1 class="text-2xl font-bold">拍照识物</h1>
+            <div class="flex items-center gap-3">
+                <button class="bg-primary/10 text-primary px-4 py-1.5 rounded-full flex items-center gap-1 font-medium">
+                    <i class="fa fa-star text-primary"></i>
+                    <span>收藏</span>
+                </button>
+                <button class="text-gray-500 text-xl">
+                    <i class="fa fa-ellipsis-h"></i>
+                </button>
+                <button class="text-gray-500 text-xl">
+                    <i class="fa fa-circle-o"></i>
+                </button>
+            </div>
+        </div>
+        <div class="flex gap-4 mb-6">
+            <div class="w-[48%] relative rounded-2xl overflow-hidden card-shadow">
+                <img src="https://picsum.photos/id/240/400/300" alt="樱花" class="w-full h-40 object-cover">
+                <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/40 to-transparent">
+                    <h3 class="text-white text-lg font-semibold">植物识别</h3>
+                    <p class="text-white/80 text-sm">2万种常见植物</p>
+                </div>
+                <button
+                    class="absolute bottom-3 right-3 w-12 h-12 rounded-full btn-gradient flex items-center justify-center shadow-lg">
+                    <i class="fa fa-camera text-white text-xl"></i>
+                </button>
+            </div>
+            <div class="w-[52%] flex flex-col gap-4">
+                <div class="bg-white rounded-2xl p-3 flex items-center justify-between card-shadow"
+                    onclick="window.location.href='animal-recognition.html'">
+                    <div>
+                        <h3 class="text-lg font-semibold">动物识别</h3>
+                        <p class="text-sm text-textSub">近八千种动物</p>
+                    </div>
+                    <img src="https://picsum.photos/id/1074/60/60" alt="火烈鸟"
+                        class="w-12 h-12 rounded-full object-cover">
+                </div>
+                <div class="bg-white rounded-2xl p-3 flex items-center justify-between card-shadow">
+                    <div>
+                        <h3 class="text-lg font-semibold">果蔬识别</h3>
+                        <p class="text-sm text-textSub">近千种水果和蔬菜</p>
+                    </div>
+                    <img src="https://picsum.photos/id/292/60/60" alt="果蔬" class="w-12 h-12 rounded-full object-cover">
+                </div>
+            </div>
+        </div>
+        <h2 class="text-xl font-bold mb-4">实用工具</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-2xl p-4 card-shadow relative">
+                <div>
+                    <h3 class="text-lg font-semibold mb-1">文字识别</h3>
+                    <span class="text-xs text-red-500 bg-red-50 px-1.5 py-0.5 rounded mr-2">限时免费</span>
+                    <p class="text-sm text-textSub">OCR提取文字</p>
+                </div>
+                <div class="absolute bottom-2 right-2 text-blue-500 text-4xl">
+                    <i class="fa fa-file-text-o"></i>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-4 card-shadow relative">
+                <div>
+                    <h3 class="text-lg font-semibold mb-1">拍照翻译</h3>
+                    <span class="text-xs text-red-500 bg-red-50 px-1.5 py-0.5 rounded mr-2">限时免费</span>
+                    <p class="text-sm text-textSub">支持多种语言</p>
+                </div>
+                <div class="absolute bottom-2 right-2 text-green-500 text-4xl">
+                    <i class="fa fa-language"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
